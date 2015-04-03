@@ -1,7 +1,7 @@
 <!-- Ecrire da?ns la base de donnée -->
 <?php
 	// On ajoute une entrée dans la table jeux_video
-	$bdd->exec('INSERT INTO membre(nom, prenom, password) VALUES(\'Drouet\', \'Celine\', \'12345\')');
+	$bdd->exec('INSERT INTO membre(nom, prenom, password) VALUES(\'Drot\', \'Celine\', \'12345\')');
 	//On indique que l'on veut inserer dans la base de donnée avec le code SQL (INSERT INTO)
 	//Membre est la table dans lequel on souhaite ajouter un utilisateur
 	//On indique les valeurs à ajouter grâce à VALUES
