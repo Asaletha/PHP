@@ -1,5 +1,6 @@
 
 <!-- Récuperer les contenus dans une base de donnée -->
+
 <?php 
 	$affichage = $bdd->query('SELECT * FROM Membre');
 	/* 
@@ -15,8 +16,16 @@
 	$affichage = $bdd->query('SELECT * FROM Membre LIMIT 0, 10' ); // Ici, on récupére les 20 derniers entrées de la Table Membre
 	$affichage = $bdd->query('SELECT Nom FROM Membre ORDER BY Age DESC ' );// Ici, on Affiche les Noms par ordre décroissant d'Age.
 	// Ceci est une petite liste de ce que l'on peut faire avec le SQL.
-?>
 
+	//On peut également effectuer une requête préparée, Voici des exemples:
+	$affichage = $bdd->prepare('SELECT Nom FROM Membre WHERE Age = :Age');
+	$affichage->execute(array('Age' => $_GET['Age']));
+	/*
+		Ici on veut rechercher un age dans la Table. On remplace donc la valeur de Age par :
+		La deuxième ligne récupére l'age à partir d'un Formulaire.
+	*/
+
+?>
 
 <!-- On affiche les données à l'aide d'une boucle -->
 <?php
